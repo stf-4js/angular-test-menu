@@ -1,10 +1,10 @@
 <button mat-button [matMenuTriggerFor]="mainMenu">Menu</button>
-
+s
 <mat-menu #mainMenu="matMenu">
   <button mat-menu-item [matMenuTriggerFor]="subMenu">Sub Menu</button>
   <ng-container *ngFor="let i of [1, 2]">
-    <button mat-menu-item [matMenuTriggerFor]="testMenu">Menu {{ i }}</button>
-    <mat-menu #testMenu="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="embedMenu">Menu {{ i }}</button>
+    <mat-menu #embedMenu="matMenu">
       <button mat-menu-item>Value: {{ i }}</button>
     </mat-menu>
   </ng-container>
