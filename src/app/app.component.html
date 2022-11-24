@@ -1,0 +1,18 @@
+<button mat-button [matMenuTriggerFor]="mainMenu">Menu</button>
+
+<mat-menu #mainMenu="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="subMenu">Sub Menu</button>
+  <ng-container *ngFor="let i of [1, 2]">
+    <button mat-menu-item [matMenuTriggerFor]="testMenu">Menu {{ i }}</button>
+    <mat-menu #testMenu="matMenu">
+      <button mat-menu-item>Value: {{ i }}</button>
+    </mat-menu>
+  </ng-container>
+  <ng-container *ngFor="let i of [4, 5]">
+    <test-menu [i]="i"></test-menu>
+  </ng-container>
+</mat-menu>
+
+<mat-menu #subMenu="matMenu">
+  <button mat-menu-item>Value: 0</button>
+</mat-menu>
